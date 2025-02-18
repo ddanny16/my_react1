@@ -1,38 +1,49 @@
-import React from 'react';
-import './index.css';
+import React from "react";
+import "./index.css";
+// import { Link } from 'react-router-dom';
 
-function Button({ children }) {
-  return <button className="cta-button">{children}</button>;
-}
 
-function Navbar() {
-  return <nav className="navbar">TEST LOGO</nav>;
-}
-
-function Card({ imgSrc, altText }) {
+const Header = () => {
   return (
-    <div className="card">
-      <img src={imgSrc} alt={altText} className="card-image" />
+    <header className="header">
+    <div className="logo">TEST LOGO</div>
+    <nav className="nav">
+      <span className="nav-button">Since 1973</span>
+      <span className="nav-button">Services</span>
+      <span className="nav-button">Experience</span>
+      <span className="nav-button">Shop</span>
+      <span className="nav-button">Project X</span>
+    </nav>
+    <div className="user-actions">
+      <span className="btn">My KB</span>
+    </div>
+  </header>
+  );
+};
+
+const HeroSection = () => {
+  return (
+    <section className="hero">
+      <div className="hero-text">
+        <h1>FOUNDER’S STYLE SINCE</h1>
+        <h2>1973</h2>
+        <p>A lascivious wardrobe statement that can never lose its power.</p>
+        <button className="btn">Book an appointment</button>
+      </div>
+      <div className="hero-image">
+        {/* You can place an image here */}
+      </div>
+    </section>
+  );
+};
+
+const App = () => {
+  return (
+    <div>
+      <Header />
+      <HeroSection />
     </div>
   );
-}
+};
 
-export default function FoundersStylePage() {
-  return (
-    <div className="page-container">
-      <Navbar />
-      <div className="hero-section">
-        <h1 className="hero-title">FOUNDER'S STYLE SINCE</h1>
-        <h2 className="hero-year">1973</h2>
-        <p className="hero-subtext">A lascivious wardrobe statement that can never lose its power.</p>
-        <Button>Book an appointment</Button>
-      </div>
-      <div className="cards-section">
-        <Card imgSrc="/founder1.png" altText="Founder Style 1" />
-        <Card imgSrc="/founder2.png" altText="Founder Style 2" />
-        <Card imgSrc="/founder3.png" altText="Founder Style 3" />
-      </div>
-    </div>
-  );
-}
-
+export default App;
