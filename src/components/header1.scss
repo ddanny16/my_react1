@@ -1,5 +1,7 @@
+@import  "/src/styles/variable";
+ 
 .testlogo{
-    color:#050708;
+    color:$primary-color;
     height: 28px;
     top: 18px;
     left: 10px;
