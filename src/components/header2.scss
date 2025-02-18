@@ -1,20 +1,26 @@
-.header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    /* padding: 1rem; */
-    position: sticky;
-    width: 100%;
-    height: 70px;
-    z-index: 10;
-    top: 0;}
+@import "../styles/variable";
 
-li{
-    list-style-type: none;
-}    
-.Logo{
-    width: 8rem;
-    margin:  auto 0;
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  width: 90%;
+  height: 70px;
+  z-index: 10;
+  top: 0;
+  margin: 0 auto;
+  padding: 0 auto;
+}
+
+li {
+  list-style-type: none;
+}
+.Logo {
+  width: 8rem;
+  margin: auto 0;
+  font-family: Josefin Sans;
+  color: #5B5C5E;
 }
 /* .header-bg{
     background-color :rgba(
@@ -26,29 +32,27 @@ li{
     transition: 0.5s;
 } */
 
-
 .nav-menu {
-    display: flex;
+  display: flex;
 }
-.nav-menu .cart-stuff{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.nav-menu .cart-stuff {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .nav-menu li {
-    padding: 0 2rem;
+  padding: 0 2rem;
 }
 
 .nav-menu li a {
-    font-size: 1.2rem;
-    font-weight: 250;
-    color: #fff;
+  font-size: 1.2rem;
+  font-weight: 250;
+  color: $primary-color;
 }
-.hamburger{
-display: none;
+.hamburger {
+  display: none;
 }
-
 
 a,
 a:focus,
@@ -57,9 +61,6 @@ a:visited {
   position: relative;
   text-decoration: none;
   color: inherit;
-
-
-
 
   font-family: sans-serif;
 }
@@ -77,85 +78,206 @@ a:visited {
   transition: transform 0.2s;
 }
 
-.effect1:hover::before {
-  transform-origin: 0 0;
-  transform: scaleX(1);
+.search {
+  display: none;
 }
-.search{
-    display:none;
+san {
+  position: absolute;
+  bottom: 10px;
+  background: white;
+  color: blue;
+  padding: 2px;
+  border-radius: 10px;
 }
-san{
+profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.profile-icons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: baseline;
+}
+slin{
+    color: #2f1515;
+}
+
+.nav-item {
+  position: relative; /* Necessary for absolute positioning of dropdown */
+}
+
+.dropdown {
+  display: none; /* Hide dropdown by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3); 
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); 
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 5px; 
+  min-width: 160px; 
+}
+slink{
+    color: #000000;
+    font-family: Josefin Sans;
+}
+
+.nav-item.open .dropdown {
+  display: block;
+}
+
+.dropdown li {
+  padding: 8px;
+  text-align: left;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #fff; /* Ensures links are visible with white text */
+  display: block; /* Ensures the links take up the full width of the dropdown */
+}
+
+.dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Optional: Hover effect */
+}
+
+.nav-item:hover .dropdown {
+  display: block; /* Optional: Show dropdown on hover */
+}
+
+.hamburger {
+  display: none; /* Hide the hamburger icon on larger screens */
+}
+.nav-item {
+  position: relative; /* Needed for positioning the dropdown */
+}
+
+.arrow {
+  transition: transform 0.3s ease; /* Smooth transition for rotation */
+}
+
+.arrow.rotated {
+  transform: rotate(180deg); /* Rotate the arrow when dropdown is open */
+}
+
+.dropdown {
+  display: none; /* Hidden by default */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+  color: #711f1f;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  padding: 10px;
+  border-radius: 5px;
+  min-width: 160px;
+}
+
+.nav-item.open .dropdown {
+  display: block; /* Show dropdown when active */
+}
+
+.dropdown li {
+  padding: 8px;
+}
+
+.dropdown li a {
+  text-decoration: none;
+  color: #2f1515; /* White text for links */
+  display: block;
+}
+
+.dropdown li a:hover {
+  background-color: rgba(255, 255, 255, 0.3); /* Hover effect */
+}
+
+.hamburger {
+  display: none; /* Show hamburger on mobile */
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger on mobile */
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-menu li {
+    padding: 0 1rem;
+  }
+ 
+}
+
+@media screen and (max-width: 1000px) {
+  .nav-menu {
+    flex-direction: column;
+    justify-content: center;
+     width: 30%; 
+    /* height: 100vh; */
+    background: $primary-color;
     position: absolute;
-    bottom: 10px;
-    background: white;
-    color: blue;
-    padding: 2px;
-    border-radius: 10px;
+    top: 100%;
+    right: 100%;
+    z-index: -3;
+    transition: all 0.7s cubic-bezier(0.78, 0.06, 0.36, 0.99);
+    margin: 0 auto;
+  }
+  .nav-menu li {
+    padding: 0.8rem 0;
+  }
+  .nav-menu li .isActive {
+    background-color: #223dbb;
+    color: #fff;
+  }
+  .nav-menu li a {
+    font-size: 1.3rem;
+    color: #223dbb;
+  }
+  .Logo {
+    width: 7rem;
+  }
+  .nav-menu.active {
+    right: 0;
+  }
+  .hamburger {
+    display: block;
+  }
+
+  #input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px 0 0 10px;
+    border: transparent;
+  }
+  .onepiece {
+    display: none;
+  }
 }
-profile{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-
-@media screen and (max-width:1000px){ 
-    
-    .nav-menu li {
-        padding: 0 1rem;
-    }
-    
-}
-
-
-@media screen and (max-width:1000px) {
+@media screen and (max-width: 400px) {
     .nav-menu {
         flex-direction: column;
         justify-content: center;
-        /* width: 30%; */
+        width: 47%;
         /* height: 100vh; */
-        background: white;
+        background: #F1DBB6;
         position: absolute;
         top: 100%;
         right: 100%;
         z-index: -3;
         transition: all 0.7s cubic-bezier(0.78, 0.06, 0.36, 0.99);
         margin: 0 auto;
-      
     }
-    .nav-menu li{
-        padding: 0.8rem 0;
-        
-    }
-    .nav-menu li .isActive { 
-        background-color: #223DBB;
-        color: #fff;
-    }
-    .nav-menu li a{
-        font-size: 1.3rem;
-        color: #223DBB;
-    }
-    .Logo{
-        width: 7rem;
-    }
-    .nav-menu.active{
-        right: 0;
-    }
-    .hamburger{
-        display: block;
-        }
-       
-    
-
-        
-#input {
-    width: 100%;
-    padding: 12px;
-    border-radius: 10px 0 0 10px;
-    border: transparent;
-}
-.onepiece{
-    display: none;
-}
-   
 }
