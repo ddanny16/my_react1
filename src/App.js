@@ -1,12 +1,16 @@
 import React from "react";
 import "./index.css";
-// import { Link } from 'react-router-dom';
+import sideimg from "./img/IMAGE NUMERO 1 3.png"
+// import CenteredHead from "./centeredhead";
+import CenteredHeading from "./centeredhead";
+import { FaSearch} from "react-icons/fa"
 
+// import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header className="header">
-    <div className="logo">TEST LOGO</div>
+    <div className="logo"><FaSearch></FaSearch> SEARCH</div>
     <nav className="nav">
       <span className="nav-button">Since 1973</span>
       <span className="nav-button">Services</span>
@@ -31,7 +35,7 @@ const HeroSection = () => {
         <button className="btn">Book an appointment</button>
       </div>
       <div className="hero-image">
-        {/* You can place an image here */}
+      <img src={sideimg} alt="Logo" />
       </div>
     </section>
   );
@@ -40,6 +44,7 @@ const HeroSection = () => {
 const App = () => {
   return (
     <div>
+      <CenteredHeading/>
       <Header />
       <HeroSection />
     </div>
