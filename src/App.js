@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import './index.css';
 
-function App() {
+function Button({ children }) {
+  return <button className="cta-button">{children}</button>;
+}
+
+function Navbar() {
+  return <nav className="navbar">TEST LOGO</nav>;
+}
+
+function Card({ imgSrc, altText }) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="card">
+      <img src={imgSrc} alt={altText} className="card-image" />
     </div>
   );
 }
 
-export default App;
+export default function FoundersStylePage() {
+  return (
+    <div className="page-container">
+      <Navbar />
+      <div className="hero-section">
+        <h1 className="hero-title">FOUNDER'S STYLE SINCE</h1>
+        <h2 className="hero-year">1973</h2>
+        <p className="hero-subtext">A lascivious wardrobe statement that can never lose its power.</p>
+        <Button>Book an appointment</Button>
+      </div>
+      <div className="cards-section">
+        <Card imgSrc="/founder1.png" altText="Founder Style 1" />
+        <Card imgSrc="/founder2.png" altText="Founder Style 2" />
+        <Card imgSrc="/founder3.png" altText="Founder Style 3" />
+      </div>
+    </div>
+  );
+}
+
